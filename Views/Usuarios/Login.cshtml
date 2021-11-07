@@ -1,0 +1,29 @@
+@model Templo_de_Momo.Models.LoginView
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="text-center">
+    <h4>Acceso</h4>
+    <hr/>
+    <div>
+        <form asp-controller="Usuarios" asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Usuario" class="control-label"><i class="fas fa-at"></i> E-Mail</label>
+                <input asp-for="Usuario" class="form-control" />
+                <span asp-validation-for="Usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clave" class="control-label"><i class="fas fa-key"></i> Clave</label>
+                <input asp-for="Clave" class="form-control" />
+                <span asp-validation-for="Clave" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Entrar" class="btn btn-primary btn-block" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="Index"><i class="far fa-hand-point-left"></i> Volver a Inicio</a>
+</div>

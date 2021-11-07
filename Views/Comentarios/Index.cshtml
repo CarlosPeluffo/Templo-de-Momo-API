@@ -1,0 +1,61 @@
+@model IEnumerable<Templo_de_Momo.Models.Comentario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cuerpo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cuerpo)
+            </td>
+            <td>
+                @(item.Usuario.NickName)
+            </td>
+            <td>
+                <div class="btn-group-vertical" role="group">
+                    <div class="btn-group btn-group-sm" role="group" aria-label="First group">
+				        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id" title="Editar">
+                            <i class="far fa-edit"></i> Editar
+                        </a>
+                    </div>
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Second group">
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id" title="Detalles">
+                            <i class="fas fa-info-circle"></i> Detalles
+                        </a>
+                    </div>
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Third group">
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id" title="Borrar">
+                            <i class="far fa-trash-alt"></i> Borrar
+                        </a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
