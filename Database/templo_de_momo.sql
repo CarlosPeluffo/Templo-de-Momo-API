@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2021 a las 03:49:57
+-- Tiempo de generación: 11-11-2021 a las 00:22:28
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -77,7 +77,7 @@ CREATE TABLE `creadores` (
 --
 
 INSERT INTO `creadores` (`id`, `nick_name`, `mail`, `password`, `nombre`, `apellido`, `avatar`) VALUES
-(3, 'AyrtonPRPeluffo', 'ayrtonPR@mail.com', 'p3yd/EO1ONgK1V/zKqvkO2kkrK690UMftTYenBRomaU=', 'Ayrton', 'Peluffo', '/UsersFiles\\photo_3.png'),
+(3, 'AyrtonPR', 'ayrtonPR@mail.com', 'p3yd/EO1ONgK1V/zKqvkO2kkrK690UMftTYenBRomaU=', 'Ayrton', 'Peluffo', '/UsersFiles\\photo_3.png'),
 (4, 'Killah', 'killah@mail.com', 'p3yd/EO1ONgK1V/zKqvkO2kkrK690UMftTYenBRomaU=', 'Agustina', 'Ortiz', '/UsersFiles\\photo_4.png');
 
 -- --------------------------------------------------------
@@ -126,7 +126,7 @@ CREATE TABLE `noticias` (
 --
 
 INSERT INTO `noticias` (`id`, `CreadorId`, `JuegoId`, `fecha`, `titulo`, `cuerpo`) VALUES
-(1, 3, 2, '2021-10-23', 'Actualización', 'Actualizamos el modo multijugar para aumentar la fluidez y mejorar los fps online'),
+(1, 3, 2, '2021-10-23', 'Actualización', 'Actualizamos el modo multijugar para aumentar la fluidez y mejorar los fps online.'),
 (2, 3, 2, '2021-10-24', 'Muy pronto la Secuela!', 'Muy pronto se lanzara oficialmente la segunda entrega y continuacion de este Famoso e Increible juego. Están avisado!s'),
 (3, 4, 4, '2021-10-24', 'Parche De Idioma', 'Se agrego el parche de actualizacion de idiomas para que puedas disfrutarlos doblado o subtitulado al español (*u*)'),
 (4, 3, 3, '2021-10-24', 'Actualización', 'Reparacion de bugs y contadores de daño :)'),
@@ -187,6 +187,7 @@ ALTER TABLE `creadores`
 --
 ALTER TABLE `juegos`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `titulo` (`titulo`),
   ADD KEY `CreadorId` (`CreadorId`);
 
 --
@@ -224,13 +225,13 @@ ALTER TABLE `creadores`
 -- AUTO_INCREMENT de la tabla `juegos`
 --
 ALTER TABLE `juegos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
