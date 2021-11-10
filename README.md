@@ -1,5 +1,5 @@
 # Templo-de-Momo-API
-API Rest para Trabajo Final - Laboratorio 3.
+Web API para Trabajo Final - Laboratorio 3.
 
 ------------------------El Templo de Momo------------------------------
 
